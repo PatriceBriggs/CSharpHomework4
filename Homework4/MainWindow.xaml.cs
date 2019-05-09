@@ -29,21 +29,21 @@ namespace Homework4
         private void UxInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             uxButton.IsEnabled = false;
-            if (IsUSOrCanadianZipCode(uxInput.Text))
+            if (CheckZipCode(uxInput.Text))
                 uxButton.IsEnabled = true;
         }
 
-        private bool IsUSOrCanadianZipCode(string zipCode)
+        private bool CheckZipCode(string zipCode)
         {
-            var _usZipRegEx = @"^\d{5}(?:[-\s]\d{4})?$";
-            var _caZipRegEx = @"^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])\ {0,1}(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$";
+            var usZipRegEx = @"^\d{5}(?:[-\s]\d{4})?$";
+            var caZipRegEx = @"^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])\ {0,1}(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$";
 
-            var validZipCode = true;
-            if ((!Regex.Match(zipCode, _usZipRegEx).Success) && (!Regex.Match(zipCode, _caZipRegEx).Success))
+            var isValidZipCode = true;
+            if ((!Regex.Match(zipCode, usZipRegEx).Success) && (!Regex.Match(zipCode, caZipRegEx).Success))
             {
-                validZipCode = false;
+                isValidZipCode = false;
             }
-            return validZipCode;
+            return isValidZipCode;
         }
     }
 }

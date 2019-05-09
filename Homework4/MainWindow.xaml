@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework4"
         mc:Ignorable="d"
-        Title="Zipcode Checker" Height="450" Width="800">
+        Title="Zipcode Checker" Height="300" Width="300">
     <StackPanel>
         <TextBox x:Name="uxInput" TextChanged="UxInput_TextChanged"/>
-        <Button x:Name="uxButton" IsEnabled="False">Push It</Button>
+        <Button x:Name="uxButton" IsEnabled="False">Push To Check</Button>
     </StackPanel>
 </Window>
